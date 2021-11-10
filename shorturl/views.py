@@ -39,7 +39,7 @@ def url_shortener(request):
 
     elif request.method == 'POST':
         used_form = ShorturlForm(request.POST)
-        if used_form.is_valid() and request.user.is_authenticated():
+        if used_form.is_valid() and request.user.is_authenticated:
             shortened_object = used_form.save(commit=False)
             shortened_object.author = request.user
             shortened_object.save()
