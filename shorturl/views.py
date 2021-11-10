@@ -48,8 +48,8 @@ def url_shortener(request):
             context['new_url'] = new_url
             context['long_url'] = long_url
             return render(request, template, context)
-		else:
-			context['no_user'] = "Please register or log in to use the app"
+        else:
+            context['no_user'] = "Please register or log in to use the app"
         context['errors'] = used_form.errors
 
         return render(request, template, context)
